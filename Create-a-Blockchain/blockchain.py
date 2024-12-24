@@ -33,8 +33,8 @@ class Blockchain:
         while check_proof is False: 
             hash_operation = hashlib.sha256(str(new_proof**2 - previous_proof**2)
                                             .encode()).hexdigest()
+            print(f"Nonce : {new_proof} => {hash_operation} \n")
             if hash_operation[:4] == '0000':
-                print("hash block : ",hash_operation)
                 check_proof = True
             else:
                 new_proof += 1 
